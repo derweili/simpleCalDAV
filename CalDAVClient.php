@@ -247,7 +247,7 @@ class CalDAVClient {
           $this->xmlResponse = trim(substr($response, $pos));
           $this->xmlResponse = preg_replace('{>[^>]*$}s', '>',$this->xmlResponse );
           $parser = xml_parser_create_ns('UTF-8');
-          xml_parser_set_option ( $parser, XML_OPTION_SKIP_WHITE, 1 );
+          //xml_parser_set_option ( $parser, XML_OPTION_SKIP_WHITE, 1 );
           xml_parser_set_option ( $parser, XML_OPTION_CASE_FOLDING, 0 );
 
           if ( xml_parse_into_struct( $parser, $this->xmlResponse, $this->xmlnodes, $this->xmltags ) === 0 ) {
